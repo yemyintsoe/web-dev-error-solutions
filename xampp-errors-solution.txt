@@ -27,3 +27,49 @@ $cfg['Servers'][$i]['host'] = 'localhost:3307';
 - change the main port from 3306 to 3307
 
 # then save & restart the apache and mysql
+
+
+
+### Myanmar Version
+
+ကျွန်တော် တို့ Web Development လောကမှာ MySQL ကို သုံးတဲ့ Developer တွေတော်တော် များများက XAMPP ကို သုံးဖူးကြပါတယ်။ ဒီမှာ XAMPP ဆိုတာဘာလဲ ကို မပြောတော့ပါဘူး၊ XAMPP Software Error ကိုဘယ်လို ရှင်းမလဲပဲ ရေးချင်တာပါ။
+XAMPP ကိုသုံးတဲ့ နေရာမှာ Developer ဖြစ်ပြီးသားသူတွေက တော့ XAMPP Error ဖြစ်နေပြီးဆို ရင် ကိုယ့်ဘာသာ ဖြေရှင်းတတ်ကြပါတယ်။ 
+ဒါပေမဲ့ အခုမှ Web Development ကိုလေ့လာနေတယ်၊ XAMPP ကိုသုံးနေတုန်းမှာ ပဲ တစ်ခြား software တွေကို ထည့်လိုက်လို့ port error တွေဖြစ်သွားတတ်တယ်။ အာ့ချိန်မှာ ဘာလုပ်ရမလဲ မသိလို့ ကျွန်တော့ကို လာမေးတဲ့ ညီတွေ ညီမတွေလည်းရှိတယ်။ အာ့ကြောင့် သူတို့ကို ဒီ article လေး share လို့ရအောင်ရေးပေးလိုက်တယ်ပေါ့၊ :)
+
+## when apache port error occure, do this
+XAMPP Software မှာပါ၀◌င်တဲ့ Apache port error ဖြစ်ရင်တော့ ဒီလိုလေးလုပ်ပါ။
+အောက်မှာ မြှားလေးနဲ့ ပြထားတဲ့ အတိုင်း click နိမ်းပီးသွားပေးပါ။
+- xampp -> config -> apache (httpd.conf)
+apache (httpd.conf) ကို နိမ့်လိုက်ရင် notepad software နဲ့ပွင့်လာမယ်၊ အဲ့ဒီမှာ Listen နဲ့ ServerName ကိုရှာပါ၊ သူတို့အနားမှာ Default အနေနဲ့ 80 ရှိနေပါမယ်၊ အာ့တာကို 8080 (8080 မရရင် 8081, 8082, etc) လို့ပြောင်းပေးပါ။ အောက်ပါအတိုင်းလုပ်ပေးပါနော်။...
+
+# ပထမနေရာ
+Listen 80 (ဒီလိုကနေ)
+Listen 8080 (ဒီလိုပြောင်းပေးပါ)
+
+# ဒုတိယနေရာ
+ServerName localhost:80 (ဒီလိုကနေ)
+ServerName localhost:8080 (ဒီလိုပြောင်းပေးပါ)
+
+## then setting up some Config as below
+အောက်မှာ မြှားလေးနဲ့ ပြထားတဲ့ အတိုင်း click နိမ်းပီးသွားပေးပါ။
+- xampp -> config -> service and port settings
+- service and port settings လေးကို နိမ့်ပြီးရင် apache ဆိုတဲ့ tag, main port အောက်မှာ 80 ကနေ 8080 လို့ပြောင်းပေးပါ။
+- ပြီးတော့ XAMPP Software ကနေ Apache ကို stop & start ပြန်လုပ်ပေးပါ အဆင်ပြေသွားမှာပါ။
+
+
+## when mysql port error occure, do this
+XAMPP Software မှာပါ၀◌င်တဲ့ MySQL port error ဖြစ်ရင်တော့ ဒီလိုလေးလုပ်ပါ။
+အောက်မှာ မြှားလေးနဲ့ ပြထားတဲ့ အတိုင်း click နိမ်းပီးသွားပေးပါ။
+- xammp -> config -> phpmyadmin(config.inc.php)
+phpmyadmin(config.inc.php) ကို နိမ့်လိုက်ရင် notepad software နဲ့ပွင့်လာမယ်၊ အဲ့ဒီမှာ $cfg['Servers'][$i]['host'] = '127.0.0.1'; ကိုရှာပါ။ ပြီးရင် အောက်ပါအတိုင်းလုပ်ပေးပါနော်။...
+
+# ဒီလိုလေးကနေ
+$cfg['Servers'][$i]['host'] = '127.0.0.1';
+# ဒီလိုလေး ပြောင်းပေးပါ (default port ကတော့ 3306 ဖြစ်ပါတယ်၊ 3307, 3308, 3309 ဒီလိုလေးတွေပြောင်းလို့ရပါတယ်။)
+$cfg['Servers'][$i]['host'] = 'localhost:3307';
+
+## then setting up some Config as below
+အောက်မှာ မြှားလေးနဲ့ ပြထားတဲ့ အတိုင်း click နိမ်းပီးသွားပေးပါ။
+- xampp -> config -> service and port settings
+- service and port settings လေးကို နိမ့်ပြီးရင် MySQL ဆိုတဲ့ tag, main port အောက်မှာ 3306 ကနေ 3307 လို့ပြောင်းပေးပါ။
+- ပြီးတော့ XAMPP Software ကနေ MySQL ကို stop & start ပြန်လုပ်ပေးပါ အဆင်ပြေသွားမှာပါ။
