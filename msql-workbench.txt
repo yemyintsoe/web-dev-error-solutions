@@ -1,0 +1,3 @@
+# how to remotely connect database from the live server using mysql workbench
+
+ref: https://www.digitalocean.com/community/tutorials/how-to-connect-to-a-mysql-server-remotely-with-mysql-workbench
