@@ -1,0 +1,29 @@
+### for some reasons there can be errors in our xampp software, it may be due to appach port errors or mysql port errors
+
+## when apache port error occure, do this
+- go to -> xampp> config> apache (httpd.conf)>
+- change the port from default 80 to 8080
+# 1
+#Listen 12.34.56.78:80
+Listen 80
+# 2
+ServerName localhost:80
+
+## then setting up some Config as below
+- got to -> xampp> config> service and port settings> appache
+- change the main port from 80 to 8080
+
+
+## when mysql port error occure, do this
+- go to -> xammp> config> phpmyadmin(config.inc.php)
+- change the default port from 3306 to 3307
+# from
+$cfg['Servers'][$i]['host'] = '127.0.0.1';
+# to
+$cfg['Servers'][$i]['host'] = 'localhost:3307';
+
+## then setting up some Config as below
+- got to -> xampp> config> service and port settings> mysql
+- change the main port from 3306 to 3307
+
+# then save & restart the apache and mysql
