@@ -1,0 +1,14 @@
+Errors:
+when making router transition in vue3, if we set mode="out-in" and we run "npm run dev". then the page does not appear properly
+
+
+Solution:
+remove the comments before the first element of the template, below you must remove <!-- Introduction --> comment, then it will work like a cinch
+<template>
+    <!-- Introduction -->
+    <section class="mb-8 py-20 text-white text-center relative">
+     <!-- rest of the code -->
+     </section
+</template>
+
+https://stackoverflow.com/questions/66411838/vue-3-0-router-components-transition-does-not-work-with-mode-out-in
