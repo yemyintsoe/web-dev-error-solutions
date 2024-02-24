@@ -1,0 +1,13 @@
+If we deploy our vue app on server, all routes will be working when we navigate programmitically and page not found on reload.
+
+# The Solution for Netlify
+- Just create "_redirects" inside public folder and add this
+// _redirects
+/*  /index.html 200
+
+
+# Ref
+https://medium.com/@ishoshot/page-not-found-on-reload-vuejs-netlify-c71716e97e6
+
+Official Doc
+https://docs.netlify.com/routing/redirects/
