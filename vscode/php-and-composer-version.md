@@ -3,7 +3,7 @@ PHP and Composer version from VSCode and Laragon are not the same. How to fix it
 
 
 # Solution:
-## Configure VS Code to Use Laragon's PHP
+**Configure VS Code to Use Laragon's PHP**
 There are some more solution for this. But If you don’t want to modify system variables, you can tell VS Code to use Laragon’s PHP explicitly.
 
 1. Open VS Code settings.json (Ctrl + Shift + P → search Preferences: Open Settings (JSON)).
